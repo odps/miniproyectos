@@ -1,0 +1,25 @@
+div{
+    margin: auto;
+    text-align: center;
+}
+
+#tirar{
+    padding: 5px 10px;
+    font-size: 1.5em;
+    font-family: 'Roboto';
+    border-radius: 20px;
+    transition: background-color 0.25s;
+}
+#tirar:hover{
+    background-color: antiquewhite;
+}
+img{
+    height: 75px;
+    width: 75px;
+    border-radius: 20px;
+    box-shadow: -1px 2px grey;
+    margin: 3px;
+}
+img:hover{
+    box-shadow: -2px 3px orange;
+}

@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+}
+h1{
+    color: orange;
+    text-shadow: -2px -1px 2px purple;
+}
+p{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#boton{
+    margin: 10px;
+    padding: 5px;
+    font-weight: bold;
+}

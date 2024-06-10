@@ -17,6 +17,7 @@ boton.addEventListener("click", ()=>{
         reintentar();
     }else{
         feedback.innerText = `Vuelve a intentarlo, te quedan ${maxIntentos - intentos} intentos`;
+        userNum.value = "";
     }
 
     if (intentos == maxIntentos) {

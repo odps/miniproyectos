@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <link rel="stylesheet" href="temperatura.css">
+    <script src="temperatura.js" defer></script>
+</head>
+
+<body>
+    <section>
+        <h1>Convierte la temperatura</h1>
+        <form action="submit" method="post">
+            <fieldset>
+                <legend>Introduce la temperatura</legend>
+                <input type="text" name="usrInput" id="temp">
+                <br>
+
+                <input type="radio" name="temp1" id="celsius" checked>
+                <label for="celsius">Celsius</label>
+                <input type="radio" name="temp1" id="fahrenheit">
+                <label for="fahrenheit">Fahrenheit</label>
+                <input type="radio" name="temp1" id="kelvin">
+                <label for="kelvin">Kelvin</label>
+                <br>
+            </fieldset>
+            <fieldset>
+                <legend>Convertir a</legend>
+                <input type="radio" name="temp2" id="celsius2" checked>
+                <label for="celsius">Celsius</label>
+                <input type="radio" name="temp2" id="fahrenheit2">
+                <label for="fahrenheit">Fahrenheit</label>
+                <input type="radio" name="temp2" id="kelvin2">
+                <label for="kelvin">Kelvin</label>
+                <br>
+            </fieldset>
+            <input type="button" value="Convertir" id="boton">
+            <br>
+
+            <input type="text" name="result" id="result" disabled>
+        </form>
+
+    </section>
+</body>
+
+</html>

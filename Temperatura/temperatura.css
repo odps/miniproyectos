@@ -1,28 +1,53 @@
-body, html{
+body, html {
     background: linear-gradient(to bottom, rgb(248, 111, 47), rgb(103, 195, 218));
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-section{
+section {
     background: linear-gradient(to bottom, rgb(241, 186, 161), rgb(137, 199, 214));
     margin: auto;
     text-align: center;
     border: 1px black solid;
-    height: 50%;
-    width: 50%;
+    height: auto;
+    width: 80%;
+    max-width: 500px;
     padding: 20px 10px 40px 10px;
-    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-#boton{
+
+#boton {
     margin: 20px;
-    padding: 5px;
+    padding: 10px 20px;
     font-weight: bold;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 87, 34);
+    color: white;
 }
-fieldset{
+
+fieldset {
     text-align: left;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(204, 204, 204);
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    text-align: center;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    cursor: pointer;
 }

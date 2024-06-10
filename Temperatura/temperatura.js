@@ -1,76 +1,44 @@
-//Constantes de los elementos HTML
 const usrTemp = document.getElementById("temp");
 const btn = document.getElementById("boton");
 const result = document.getElementById("result");
-//Vectores de inputs y outputs
 const input = document.getElementsByName("temp1");
 const output = document.getElementsByName("temp2");
 
-btn.onclick = function () {
+const conversions = {
+    celsius: {
+        celsius2: temp => temp,
+        fahrenheit2: temp => (temp * 9 / 5) + 32,
+        kelvin2: temp => temp + 273.15
+    },
+    fahrenheit: {
+        celsius2: temp => (temp - 32) * 5 / 9,
+        fahrenheit2: temp => temp,
+        kelvin2: temp => ((temp - 32) * 5 / 9) + 273.15
+    },
+    kelvin: {
+        celsius2: temp => temp - 273.15,
+        fahrenheit2: temp => (temp - 273.15) * 9 / 5 + 32,
+        kelvin2: temp => temp
+    }
+};
 
+btn.onclick = function () {
     result.value = "";
     let temp = Number(usrTemp.value);
 
-    let inputBtn;
-    let outputBtn;
+    if (isNaN(temp)) {
+        result.value = "Entrada invalida";
+        return;
+    }
+
+    let inputBtn, outputBtn;
 
     for (let i = 0; i < input.length; i++) {
-        if (input[i].checked) {
-            inputBtn = input[i].id;
-        }
-
-        if (output[i].checked) {
-            outputBtn = output[i].id;
-        }
+        if (input[i].checked) inputBtn = input[i].id;
+        if (output[i].checked) outputBtn = output[i].id;
     }
 
-    console.log(inputBtn);
-    console.log(outputBtn);
-
-    if (inputBtn == "celsius") {
-        switch (outputBtn) {
-            case "celsius2":
-                result.value = temp;
-                break;
-            case "fahrenheit2":
-                result.value = (temp * 9 / 5) + 32;
-                break;
-            case "kelvin2":
-                result.value = temp + 273.15;
-                break;
-            default:
-                break;
-        }
+    if (inputBtn && outputBtn) {
+        result.value = conversions[inputBtn][outputBtn](temp);
     }
-
-    if (inputBtn == "fahrenheit") {
-        switch (outputBtn) {
-            case "celsius2":
-                result.value = (temp - 32) * 5 / 9;
-                break;
-            case "fahrenheit2":
-                result.value = temp;
-                break;
-            case "kelvin2":
-                result.value = ( (temp - 32) * 5 / 9 ) + 273.15;
-            default:
-                break;
-        }
-    }
-
-    if (inputBtn == "kelvin") {
-        switch (outputBtn) {
-            case "celsius2":
-                result.value = temp - 273.15;
-                break;
-            case "fahrenheit2":
-                result.value = (temp - 273.15) * 9 / 5 + 32;
-                break;
-            case "kelvin2":
-                result.value = temp;
-                break;
-            default:
-                break;
-        }
-    }
-}
+};

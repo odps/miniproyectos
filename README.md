@@ -1,2 +1,2 @@
-# PracticasJS
-Repo for JS basics practice projects.
+# Small projects
+Repo for basic practice projects.
